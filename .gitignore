@@ -1,0 +1,39 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente (segredos)
+.env
+.env.*
+!.env.example
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+expo-env.d.ts
+
+# Builds nativos (gerados ao usar Android Studio futuramente)
+android/
+ios/
+*.apk
+*.aab
+
+# Logs
+*.log
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+
+# Credenciais e chaves
+*.pem
+*.key
+*.jks
+*.p12
