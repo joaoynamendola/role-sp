@@ -1,13 +1,16 @@
 import { ActivityIndicator, Pressable, StyleSheet, Text } from 'react-native';
 import { cores, fontes, raio, tamanhos } from '../constants/theme';
 
+type Variante = 'destaque' | 'roxo' | 'contorno';
+
 type Props = {
   titulo: string;
   onPress: () => void;
   carregando?: boolean;
+    variante?: Variante;
 };
 
-export function Botao({ titulo, onPress, carregando = false }: Props) {
+export function Botao({ titulo, onPress, carregando = false ,variante= 'destaque'}: Props) {
   return (
     <Pressable
       onPress={onPress}
