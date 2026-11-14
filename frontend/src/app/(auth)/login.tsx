@@ -2,7 +2,8 @@ import { useState } from "react";
 
 import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from "react-native";
 
-import { Link } from "expo-router";
+//import { Link } from "expo-router";
+import {Link, useRouter} from 'expo-router'
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Botao } from "@/components/Botao";
 import { CampoTexto } from "@/components/Campo";
@@ -12,6 +13,8 @@ import { emailValido } from "@/utils/validacao";
 type Erros = { email?: string; senha?: string }
 
 export default function Login() {
+
+    const router = useRouter();
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -25,6 +28,7 @@ export default function Login() {
 
         if (Object.keys(novosErros).length > 0) return;
 
+        router.replace('/explorar');
         console.log('Login', 'Dados válidos. A conexão com a API vem algum dia, se eu fizer ela.');
 
     }
