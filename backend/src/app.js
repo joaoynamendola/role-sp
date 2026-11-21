@@ -1,16 +1,18 @@
-const express = require('express');
-const cors = require('cors')
-const saudeRoutes = require('./routes/healthRoutes')
 
-const app = express();
+import express from 'express';
+import cors from 'cors';
 
-app.use(cors());
-app.use(express.json());
+import usuarioController from './controller/usuarioController.js'
 
-app.get('/' , (req, res) =>{
-    res.json({mesagem: 'API role sp funcionado!'})
+const server = express();
+
+server.use(cors());
+server.use(express.json());
+
+server.get('/', (req, res) => {
+    res.json({ mensagem: 'API Role SP funcionando!' });
 });
 
-app.use('/saude', saudeRoutes);
+server.use(usuarioController);
 
-module.exports = app;
+export default server;
